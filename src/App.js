@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
+const formValid = formErrors =>{
+  let valid =true;
+
+  Object.values(formErrors).forEach(val => {val.length >0
+  && (valid =false);}
+  );
+}
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -22,14 +30,16 @@ class App extends Component {
   handleSubmit= e => {
     e.preventDefault();
 
-    if(forValid(this.state.formErrors)){
+    if(formValid(this.state.formErrors)){
       console.log("--SUBMITTING"+
       "FIRST NAME: "+this.state.firstName+
       "LAST NAME: "+this.state.lastName+
       "EMAIL: "+this.state.email+
       "PASSWORD: "+this.state.password+
     "")
-    }else{}
+    }else{
+      console.error('ERROR')
+    }
   }
   render() {
     return (
