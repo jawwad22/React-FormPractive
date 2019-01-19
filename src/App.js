@@ -26,12 +26,24 @@ class App extends Component {
               />
             </div>
             <div className="email">
-              <label htmlFor='email'>First Name</label>
+              <label htmlFor='email'>Email</label>
               <input type="text" className=""
                 placeholder="Email" noValidate
                 name="email"
                 onChange={this.handleChange}
               />
+            </div>
+            <div className="password">
+              <label htmlFor='password'>Password</label>
+              <input type="password" className=""
+                placeholder="Password" noValidate
+                name="password"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="createAccount">
+            <button type="submit">Create Account</button>
+            <small>Already have an Account?</small>
             </div>
           </form>
         </div>
